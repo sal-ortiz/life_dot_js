@@ -1,0 +1,46 @@
+<html>
+
+  <head>
+    <script type='text/javascript' src='lib/third-party/md5-min.js'></script>
+
+    <script type='text/javascript' src='lib/cell.js'></script>
+    <script type='text/javascript' src='lib/field.js'></script>
+    <script type='text/javascript' src='lib/renderer.js'></script>
+    <script type='text/javascript' src='lib/game.js'></script>
+
+    <script type='text/javascript' src='lib/runtime.js'></script>
+
+    <script type='text/javascript'>
+
+      document.addEventListener('DOMContentLoaded', function(evt) {
+        var cfg = {};
+
+        cfg.fieldWidth = 800;
+        cfg.fieldHeight = 200;
+        cfg.numCells = 4000;
+
+        cfg.fps = 10;  // frames per second.
+        cfg.renderTarget = document.getElementById('output');
+        cfg.renderTarget.width = cfg.fieldWidth;
+        cfg.renderTarget.height = cfg.fieldHeight;
+
+        window.runtime = new Runtime(cfg);
+        window.runtime.start();
+
+      });
+
+      document.addEventListener('keydown', function(evt) {
+        // Press any key to stop the loop from running.
+        runtime.stop();
+      });
+
+    </script>
+  </head>
+
+  <body>
+    <canvas id='output'>
+      <!-- intentionally left blank -->
+    </canvas>
+  </body>
+
+</html>
