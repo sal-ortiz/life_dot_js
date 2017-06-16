@@ -21,8 +21,8 @@
 
         cfg.fps = 10;  // frames per second.
         cfg.renderTarget = document.getElementById('output');
-        cfg.renderTarget.width = cfg.fieldWidth;
-        cfg.renderTarget.height = cfg.fieldHeight;
+        cfg.renderTarget.width = cfg.fieldWidth * cfg.fieldScale;
+        cfg.renderTarget.height = cfg.fieldHeight * cfg.fieldScale;
 
         window.runtime = new Runtime(cfg);
         window.runtime.start();
